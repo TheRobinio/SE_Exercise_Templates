@@ -1,8 +1,18 @@
 package de.uni.koeln.se.state;
 
-public class Elv_States {
+public enum Elv_States {
 	
-	public  String Moving_up = "Moving_up";
+	MOVING_UP(1),
+	MOVING_DOWN(-1),
+	IDLE(0);
 
+	private final int change;
 
+	Elv_States(int change) {
+		this.change = change;
+	}
+
+	public int elevate() {
+		return this.change;
+	}
 }
