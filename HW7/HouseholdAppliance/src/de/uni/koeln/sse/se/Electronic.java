@@ -11,6 +11,7 @@ public class Electronic implements HouseholdItem{
 	int weight;
 	
 	Boolean fragile;
+	final static double[] prices = {(double) 5/15,(double) 5/10};
 	
 
 
@@ -29,25 +30,25 @@ public class Electronic implements HouseholdItem{
 	public int getHeight() {
 		return height;}
 
-	public void setHeight(Integer height) {
+	public void setHeight(int height) {
 		this.height = height;}
 
-	public int getLenght() {
+	public int getLength() {
 		return lenght;}
 
-	public void setLenght(Integer lenght) {
+	public void setLength(int length) {
 		this.lenght = lenght;}
 
 	public int getWidth() {
 		return width;}
 
-	public void setWidth(Integer width) {
+	public void setWidth(int width) {
 		this.width = width;}
 
-	public Integer getWeight() {
+	public int getWeight() {
 		return weight;}
 
-	public void setWeight(Integer weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;}
 
 	public String getName() {
@@ -55,7 +56,13 @@ public class Electronic implements HouseholdItem{
 
 	public void setName(String name) {
 		this.name = name;}
-	
+
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
+
+
 	public Boolean getFragile() {
 		return fragile;}
 

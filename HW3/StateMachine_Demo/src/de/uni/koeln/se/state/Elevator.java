@@ -30,35 +30,18 @@ public class Elevator{
 		System.out.println("You are on floor:"+current_Floor);
 
 		if(current_Floor < dest_Floor) {
-			return go_up();
+			ev = Elv_States.MOVING_UP;
+			current_Floor += ev.elevate();
 		} else if (current_Floor > dest_Floor) {
-			return go_down();
+			ev = Elv_States.MOVING_DOWN;
+			current_Floor += ev.elevate();
 		} else if (current_Floor == dest_Floor && ev != Elv_States.IDLE) {
-			return arrive_atFloor();
+			ev = Elv_States.IDLE;
 		}
-		return false;
-	}
-
-	private boolean go_up() {
-		ev = Elv_States.MOVING_UP;
-		current_Floor += ev.elevate();
-		return go();
-	}
-
-	private boolean go_down() {
-		ev = Elv_States.MOVING_DOWN;
-		current_Floor += ev.elevate();
 		return go();
 	}
 
 	private boolean exit() {
 		return true;
 	}
-
-	private boolean arrive_atFloor() {
-		ev = Elv_States.IDLE;
-		return go();
-	}
-
-	
 }

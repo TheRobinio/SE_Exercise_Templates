@@ -8,6 +8,7 @@ public class Glass implements HouseholdItem{
 	int height;
 
 	int tickness;
+	final static double[] price = {2,1.2,1};
 
 	
 	public Glass(String name, int lenght, int width, int height, int tickness) {
@@ -29,10 +30,10 @@ public class Glass implements HouseholdItem{
 	public void setHeight(int height) {
 		this.height = height;}
 
-	public int getLenght() {
+	public int getLength() {
 		return lenght;}
 
-	public void setLenght(int lenght) {
+	public void setLength(int lenght) {
 		this.lenght = lenght;}
 
 	public int getWidth() {
@@ -55,8 +56,10 @@ public class Glass implements HouseholdItem{
 		this.name = name;
 	}
 
-	
-	
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
 
 
 }
