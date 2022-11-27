@@ -2,9 +2,7 @@ package de.uni.koeln.sse.se.task2;
 
 import java.util.HashSet;
 
-public class Composite implements OlympicComponent{
-
-    public String name;
+public class Composite extends Node implements OlympicComponent{
 
     HashSet<OlympicComponent> nodes = new HashSet<>();
 

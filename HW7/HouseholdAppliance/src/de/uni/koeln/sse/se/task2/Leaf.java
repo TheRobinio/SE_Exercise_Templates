@@ -1,13 +1,8 @@
 package de.uni.koeln.sse.se.task2;
 
-public class Leaf implements OlympicComponent{
-
-    String name;
-    int numOfAthletes;
-    int numOfMedals;
+public class Leaf extends Node implements OlympicComponent{
 
     public Leaf(String name, int numOfAthlete, int numOfMedals) {
-
         this.name = name;
         this.numOfAthletes = numOfAthlete;
         this.numOfMedals = numOfMedals;
