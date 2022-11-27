@@ -1,28 +1,34 @@
-package de.uni.koeln.sse.se;
+package de.uni.koeln.sse.se.task1;
 
-public class Glass implements HouseholdItem{
+public class Furniture implements HouseholdItem{
 	
 	String name;
+	String type;
+
+
 	int lenght;
 	int width;
 	int height;
-
-	int tickness;
-	final static double[] price = {2,1.2,1};
+	
+	int weight;
+	final static double price = (double) 5/20;
 
 	
-	public Glass(String name, int lenght, int width, int height, int tickness) {
+	public Furniture(String name, String type, int lenght, int width, int height, int weight) {
 		this.name = name;
+		this.type = type;
 		this.lenght = lenght;
 		this.width = width;
 		this.height = height;
-		this.tickness = tickness;
-	
+		this.weight = weight;
 	}
 
 
+	
 
-//Getters and Setters =
+//Getters and Setters
+
+
 
 	public int getHeight() {
 		return height;}
@@ -37,29 +43,34 @@ public class Glass implements HouseholdItem{
 		this.lenght = lenght;}
 
 	public int getWidth() {
-		return width;}
+		return width;	}
 
 	public void setWidth(int width) {
 		this.width = width;}
 
-	public Integer getTickness() {
-		return tickness;}
+	public int getWeight() {
+		return weight;}
 
-	public void setTickness(int tickness) {
-		this.tickness = tickness;}
+	public void setWeight(Integer weight) {
+		this.weight = weight;}
+
+	public String getType() {
+		return type;}
+
+	public void setType(String type) {
+		this.type = type;}
 
 	public String getName() {
-		return name;
-	}
+		return name;}
 
 	public void setName(String name) {
-		this.name = name;
-	}
+		this.name = name;}
 
 	@Override
 	public void accept(Visitor visitor) {
 		visitor.visit(this);
 	}
+
 
 
 }
